@@ -250,7 +250,11 @@ on-mode-changed = []
     run = ['move-node-to-workspace M', 'layout h_accordion']
 
 [[on-window-detected]]
-    if.app-id = 'com.valvesoftware.steam2'
+    if.app-id = 'com.valvesoftware.steam'
+    run = ['move-node-to-workspace G', 'layout h_accordion']
+
+[[on-window-detected]]
+    if.app-id = 'com.valvesoftware.steam.helper'
     run = ['move-node-to-workspace G', 'layout h_accordion']
 
 [[on-window-detected]]
