@@ -217,3 +217,43 @@ on-mode-changed = []
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
+
+[workspace-to-monitor-force-assignment]
+    'B' = 'secondary'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.systempreferences'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.mitchellh.ghostty'
+    run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+    if.app-id = 'com.jetbrains.WebStorm'
+    run = ['move-node-to-workspace E', 'layout h_accordion']
+
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.MobileSMS'
+    run = ['move-node-to-workspace M', 'layout h_accordion']
+
+[[on-window-detected]]
+    if.app-id = 'ru.keepcoder.Telegram'
+    run = ['move-node-to-workspace M', 'layout h_accordion']
+
+[[on-window-detected]]
+    if.app-id = 'com.viber.osx'
+    run = ['move-node-to-workspace M', 'layout h_accordion']
+
+[[on-window-detected]]
+    if.app-id = 'com.valvesoftware.steam2'
+    run = ['move-node-to-workspace G', 'layout h_accordion']
+
+[[on-window-detected]]
+    if.app-id = 'com.electron.cookie-electron'
+    run = ['move-node-to-workspace G', 'layout h_accordion']
+
