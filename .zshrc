@@ -65,5 +65,8 @@ alias lg="lazygit"
 # Functions
 touch2() { mkdir -p "$(dirname "$1")" && touch "$1" }
 
+# Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
 # Extra configuration
 [[ -r $HOME/.zshrc-extra ]] && source $HOME/.zshrc-extra
