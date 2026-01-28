@@ -28,6 +28,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH=$HOME/.local/bin:$PATH
+
+# Brew
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+
 # JetBrains
 export PATH=$HOME/.jetbrains/bin:$PATH
 
