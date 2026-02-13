@@ -30,6 +30,10 @@ source $ZSH/oh-my-zsh.sh
 # Brew
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
+# NVM
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"  # This loads nvm
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 # JetBrains
 export PATH=$HOME/.jetbrains/bin:$PATH
 
