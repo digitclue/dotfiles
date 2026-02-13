@@ -52,7 +52,7 @@ export VISUAL="$(which nvim)"
 # Aliases
 alias vi="nvim"
 alias vim="nvim"
-alias reload="source ~/.zshrc"
+alias reload="source ~/.zshenv && source ~/.zshrc"
 alias ls="lsd -F --group-dirs=first"
 alias la="lsd -lAF"
 alias ll="lsd -lF --group-dirs=first"
