@@ -5,6 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Lazy-load (autoload) Zsh function files from a directory.
+ZFUNCDIR=$ZDOTDIR/zfunctions
+fpath=($ZFUNCDIR $fpath)
+autoload -Uz $ZFUNCDIR/*(.:t)
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -65,9 +70,6 @@ alias la="lsd -lAF"
 alias ll="lsd -lF --group-dirs=first"
 alias tree="lsd -F --tree"
 alias lg="lazygit"
-
-# Functions
-touch2() { mkdir -p "$(dirname "$1")" && touch "$1" }
 
 # Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
