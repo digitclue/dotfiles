@@ -24,6 +24,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# Zsh autosuggestions
+# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Zsh syntax highlighting
+# source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Brew
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
@@ -54,7 +59,7 @@ export VISUAL="$(which nvim)"
 # Aliases
 alias vi="nvim"
 alias vim="nvim"
-alias reload="source ~/.zshenv && source ~/.zshrc"
+alias reload="source ~/.zshenv && source $ZDOTDIR/.zshrc"
 alias ls="lsd -F --group-dirs=first"
 alias la="lsd -lAF"
 alias ll="lsd -lF --group-dirs=first"
