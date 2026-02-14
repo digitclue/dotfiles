@@ -35,44 +35,14 @@ source $ZSH/oh-my-zsh.sh
 # Zsh syntax highlighting
 # source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Brew
-eval "$(/opt/homebrew/bin/brew shellenv zsh)"
-
-# NVM
-[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"  # This loads nvm
-[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# JetBrains
-export PATH=$HOME/.jetbrains/bin:$PATH
-
-# Carapace
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-source <(carapace _carapace)
-
-# Cursor
-# ~/.zshrc — disable Powerlevel10k when Cursor Agent runs
-if [[ -n "$CURSOR_AGENT" ]]; then
-  # Skip theme initialization for better compatibility
-else
-  [[ -r ~/.p10k.zsh ]] && source ~/.p10k.zsh
-fi
-
 # Neovim
 export EDITOR="$(which nvim)"
 export VISUAL="$(which nvim)"
 
-# Aliases
-alias vi="nvim"
-alias vim="nvim"
-alias reload="source ~/.zshenv && source $ZDOTDIR/.zshrc"
-alias ls="lsd -F --group-dirs=first"
-alias la="lsd -lAF"
-alias ll="lsd -lF --group-dirs=first"
-alias tree="lsd -F --tree"
-alias lg="lazygit"
+# Load every .zsh file in the .zshrc.d directory
+if [ -d "$ZDOTDIR/zshrc.d" ]; then
+  for file in "$ZDOTDIR/zshrc.d"/*.zsh; do
+    source "$file"
+  done
+fi
 
-# Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
-
-# Extra configuration
-[[ -r $HOME/.zshrc-extra ]] && source $HOME/.zshrc-extra
