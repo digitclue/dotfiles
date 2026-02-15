@@ -50,3 +50,4 @@
 confirm-close-surface = false
 macos-titlebar-style = hidden
 
+font-family = "MesloLGS NF"
