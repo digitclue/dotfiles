@@ -1,2 +1,9 @@
 .idea/
+.zcompcache/
+.zsh_sessions/
+.zcompdump*
+.zsh_history
+*.bak
+*.local
+*.local.zsh
 
