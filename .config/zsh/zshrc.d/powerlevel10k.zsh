@@ -2,5 +2,5 @@
 if [[ -n "$CURSOR_AGENT" ]]; then
   # Skip theme initialization for better compatibility
 else
-  [[ -r ~/.p10k.zsh ]] && source ~/.p10k.zsh
+  [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
 fi

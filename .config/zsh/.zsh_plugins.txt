@@ -1,0 +1,14 @@
+# Plugin to use omz plugins
+getantidote/use-omz
+
+# OMZ plugins
+ohmyzsh/ohmyzsh path:lib
+ohmyzsh/ohmyzsh path:plugins/colorize
+
+# Plugins
+zsh-users/zsh-autosuggestions
+zdharma-continuum/fast-syntax-highlighting
+
+# Theme
+romkatv/powerlevel10k
+

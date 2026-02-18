@@ -1,14 +1,15 @@
 export LANG=en_US.UTF-8
 
-# Define XDG Base Directories
+# XDG Base Directories
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# Set Zsh directory to an XDG location
+# Zsh
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 
-# Set NVM's directory to an XDG location
+# Nvm
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 
 # Ensure path arrays do not contain duplicates.

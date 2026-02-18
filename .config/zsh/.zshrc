@@ -14,23 +14,22 @@ ZFUNCDIR=$ZDOTDIR/zfunctions
 fpath=($ZFUNCDIR $fpath)
 autoload -Uz $ZFUNCDIR/*(.:t)
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Antidote
+ANTIDOTE_DIR=$XDG_DATA_HOME/zsh/antidote
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Clone antidote if necessary
+if [[ ! -d $ANTIDOTE_DIR ]]; then
+  git clone https://github.com/mattmc3/antidote $ANTIDOTE_DIR
+fi
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  colorize
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)
+source $ANTIDOTE_DIR/antidote.zsh
 
-source $ZSH/oh-my-zsh.sh
+# Set OMZ variables
+# Check Oh My Zsh Wiki for how to set these variables
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Settings
+export ZSH=$(antidote path ohmyzsh/ohmyzsh)
+
+antidote load
 
 # Load every .zsh file in the .zshrc.d directory
 if [ -d "$ZDOTDIR/zshrc.d" ]; then
