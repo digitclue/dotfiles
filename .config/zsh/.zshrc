@@ -29,6 +29,11 @@ source $ANTIDOTE_DIR/antidote.zsh
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings
 export ZSH=$(antidote path ohmyzsh/ohmyzsh)
 
+# Pyenv
+if (( $+commands[pyenv] )); then
+  eval "$(pyenv init -)"
+fi
+
 antidote load
 
 # Load every .zsh file in the .zshrc.d directory
