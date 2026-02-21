@@ -12,9 +12,6 @@ export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 # Nvm
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 
-# Pyenv
-export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-
 # Ensure path arrays do not contain duplicates.
 typeset -gU path fpath
 
