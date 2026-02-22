@@ -5,6 +5,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Ensure path arrays do not contain duplicates.
+typeset -gU path fpath
+
+# Set the list of directories that zsh searches for commands.
+path=(
+  $HOME/{,s}bin(N)
+  $HOME/.local/{,s}bin(N)
+  /opt/{homebrew,local}/{,s}bin(N)
+  /usr/local/{,s}bin(N)
+  $path
+)
+
 # Neovim
 export EDITOR="${commands[nvim]:-vi}"
 export VISUAL="${commands[nvim]:-vi}"

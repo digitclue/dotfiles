@@ -12,14 +12,3 @@ export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 # Nvm
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 
-# Ensure path arrays do not contain duplicates.
-typeset -gU path fpath
-
-# Set the list of directories that zsh searches for commands.
-path=(
-  $HOME/{,s}bin(N)
-  $HOME/.local/{,s}bin(N)
-  /opt/{homebrew,local}/{,s}bin(N)
-  /usr/local/{,s}bin(N)
-  $path
-)
