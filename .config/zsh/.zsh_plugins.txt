@@ -4,6 +4,7 @@ getantidote/use-omz
 # OMZ plugins
 ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/colorize
+ohmyzsh/ohmyzsh path:plugins/zoxide
 
 # Plugins
 zsh-users/zsh-autosuggestions
