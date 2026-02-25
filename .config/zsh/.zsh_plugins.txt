@@ -9,6 +9,7 @@ ohmyzsh/ohmyzsh path:plugins/zoxide
 # Plugins
 zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting
+fdellwing/zsh-bat
 
 # Theme
 romkatv/powerlevel10k

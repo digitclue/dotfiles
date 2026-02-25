@@ -9,3 +9,4 @@ alias la="lsd -lAF"
 alias ll="lsd -lF --group-dirs=first"
 alias tree="lsd -F --tree"
 alias lg="lazygit"
+
