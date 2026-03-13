@@ -16,6 +16,20 @@ _fzf_comprun() {
   esac
 }
 
+fzf-insert-env() {
+  local var_name=$(printenv | cut -d= -f1 | sort | fzf \
+    --preview 'printenv {}')
+
+  if [[ -n "$var_name" ]]; then
+    LBUFFER="${LBUFFER}\$${var_name}"
+  fi
+  
+  zle reset-prompt
+}
+
+zle -N fzf-insert-env
+bindkey '^E' fzf-insert-env
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
