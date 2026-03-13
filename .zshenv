@@ -9,6 +9,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 
+# Less (pager on MacOS)
+export LESSHISTFILE="$XDG_DATA_HOME/less/history"
+
 # Nvm
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 
